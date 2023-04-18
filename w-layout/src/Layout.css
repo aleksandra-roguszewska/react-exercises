@@ -1,0 +1,37 @@
+.Layout {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-rows: 70px 1fr;
+}
+
+.site_content {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-areas:
+    "article article aside"
+    "article article aside"
+    "footer footer footer";
+}
+
+.article {
+  grid-area: article;
+  background-color: yellow;
+}
+
+.aside {
+  grid-area: aside;
+  background-color: green;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: blue;
+}
+
+.navigation {
+  position: sticky;
+  top: 0;
+  background-color: red;
+}
