@@ -9,10 +9,10 @@ const links = [
   { linkUrl: "#", linkText: "Categories" },
 ];
 
-const Navigation = () => {
+const Navigation = ({ imageSrc, className }) => {
   return (
-    <div className={styles.navigation}>
-      <div className="logo">Logo</div>
+    <nav className={`${styles.navigation} ${className}`}>
+      <img className="logo" src={imageSrc}></img>
       <ul className={styles.link_list}>
         {links.map((link, index) => (
           <li key={index}>
@@ -20,7 +20,7 @@ const Navigation = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 };
 
