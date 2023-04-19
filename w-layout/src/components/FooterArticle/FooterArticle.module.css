@@ -29,6 +29,11 @@
   color: var(--very_dark_blue);
 }
 
+.heading2:hover {
+  color: var(--soft_red);
+  cursor: pointer;
+}
+
 .paragraph {
   font-size: 1rem;
   color: var(--dark_grayish_blue);

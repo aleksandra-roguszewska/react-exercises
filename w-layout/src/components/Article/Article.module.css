@@ -39,3 +39,8 @@
   padding: 1rem 2rem;
   letter-spacing: 0.2rem;
 }
+
+.button:hover {
+  background-color: var(--very_dark_blue);
+  cursor: pointer;
+}
