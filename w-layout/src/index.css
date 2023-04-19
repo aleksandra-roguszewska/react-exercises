@@ -1,13 +1,19 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 15px;
   line-height: 1.5;
   font-weight: 400;
   box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  padding: 0;
+  /* primary colors */
+  --soft_orange: hsl(35, 77%, 62%);
+  --soft_red: hsl(5, 85%, 63%);
+
+  /* neutral colors */
+  --off_white: hsl(36, 100%, 99%);
+  --grayish_blue: hsl(233, 8%, 79%);
+  --dark_grayish_blue: hsl(236, 13%, 42%);
+  --very_dark_blue: hsl(240, 100%, 5%);
 }
 
 #root {

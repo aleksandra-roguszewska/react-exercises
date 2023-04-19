@@ -10,9 +10,11 @@ const FooterArticle = ({
   return (
     <article className={styles.article}>
       <img className={styles.footer_article_image} src={imageSrc}></img>
-      <h3 className={styles.heading1}>{heading1Text}</h3>
-      <h3 className={styles.heading2}>{heading2Text}</h3>
-      <p>{paragraphText}</p>
+      <div className={styles.wrapper}>
+        <h3 className={styles.heading1}>{heading1Text}</h3>
+        <h3 className={styles.heading2}>{heading2Text}</h3>
+        <p className={styles.paragraph}>{paragraphText}</p>
+      </div>
     </article>
   );
 };

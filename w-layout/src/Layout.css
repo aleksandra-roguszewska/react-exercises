@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .Layout {
@@ -27,12 +29,12 @@
 
 .aside {
   grid-area: aside;
-  background-color: green;
+  /* background-color: green; */
 }
 
 .footer {
   grid-area: footer;
-  background-color: blue;
+  /* background-color: rgb(196, 221, 246); */
 }
 
 .navigation {
