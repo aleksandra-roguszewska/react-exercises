@@ -22,7 +22,7 @@
 
 .article {
   grid-area: article;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 .aside {
@@ -38,5 +38,5 @@
 .navigation {
   position: sticky;
   top: 0;
-  background-color: red;
+  /* background-color: red; */
 }

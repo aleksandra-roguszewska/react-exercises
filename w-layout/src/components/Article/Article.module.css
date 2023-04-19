@@ -1,5 +1,19 @@
 .article {
+  display: grid;
+  grid-template-areas:
+    "hero_image hero_image"
+    "heading wrapper";
 }
+
 .hero_image {
-  height: 300px;
+  grid-area: hero_image;
+  width: 100%;
+}
+
+.heading {
+  grid-area: heading;
+}
+
+.wrapper {
+  grid-area: wrapper;
 }
