@@ -5,6 +5,8 @@ import Footer from "./components/Footer/Footer.jsx";
 import "./Layout.css";
 import logo from "./assets/images/logo.svg";
 import heroImage from "./assets/images/image-web-3-desktop.jpg";
+import heroImageMobile from "./assets/images/image-web-3-mobile.jpg";
+import hamburgerSrc from "./assets/images/icon-menu.svg";
 import footerImageUrl1 from "./assets/images/image-retro-pcs.jpg";
 import footerImageUrl2 from "./assets/images/image-top-laptops.jpg";
 import footerImageUrl3 from "./assets/images/image-gaming-growth.jpg";
@@ -33,9 +35,17 @@ const footerArticlesArray = [
 function Layout() {
   return (
     <div className="Layout">
-      <Navigation className="navigation" imageSrc={logo} />
+      <Navigation
+        className="navigation"
+        imageSrc={logo}
+        iconSrc={hamburgerSrc}
+      />
       <div className="site_content">
-        <Article className="article" imageSrc={heroImage} />
+        <Article
+          className="article"
+          imageSrc={heroImage}
+          mobileImageSrc={heroImageMobile}
+        />
         <Aside className="aside" />
         <Footer footerArticlesArray={footerArticlesArray} className="footer" />
       </div>

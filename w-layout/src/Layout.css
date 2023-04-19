@@ -42,3 +42,20 @@
   top: 0;
   /* background-color: red; */
 }
+
+@media (max-width: 800px) {
+  .Layout {
+    display: grid;
+    width: 95%;
+    grid-template-rows: 3rem 1fr;
+    padding: 0 5px 60px 5px;
+  }
+  .site_content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    grid-template-areas:
+      "article "
+      "aside"
+      "footer";
+  }
+}

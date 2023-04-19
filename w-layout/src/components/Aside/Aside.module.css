@@ -1,6 +1,6 @@
 .aside {
   height: 100%;
-  padding: 30px 20px;
+  padding: 30px 20px 40px;
   background-color: var(--very_dark_blue);
 }
 
@@ -22,4 +22,14 @@
   height: 1px;
   background-color: var(--off_white);
   opacity: 0.5;
+}
+
+@media (max-width: 800px) {
+  .line {
+    margin: 2rem 0;
+  }
+
+  .article_wrapper {
+    height: unset;
+  }
 }

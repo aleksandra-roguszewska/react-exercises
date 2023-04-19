@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./Article.module.css";
 
-const Article = ({ className, imageSrc }) => {
+const Article = ({ className, imageSrc, mobileImageSrc }) => {
   return (
     <article className={`${className} ${styles.article}`}>
       <img src={imageSrc} className={styles.hero_image}></img>
+      <img src={mobileImageSrc} className={styles.hero_image_mobile}></img>
       <h1 className={styles.heading}>
         The Bright <br></br>Future of <br></br>Web 3.0?
       </h1>
