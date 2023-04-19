@@ -4,6 +4,7 @@
   line-height: 1.5;
   font-weight: 400;
   box-sizing: border-box;
+  color: var(--very_dark_blue);
 
   /* primary colors */
   --soft_orange: hsl(35, 77%, 62%);

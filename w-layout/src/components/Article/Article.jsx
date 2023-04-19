@@ -5,7 +5,9 @@ const Article = ({ className, imageSrc }) => {
   return (
     <article className={`${className} ${styles.article}`}>
       <img src={imageSrc} className={styles.hero_image}></img>
-      <h1 className={styles.heading}>The Bright Future of Web 3.0?</h1>
+      <h1 className={styles.heading}>
+        The Bright <br></br>Future of <br></br>Web 3.0?
+      </h1>
       <div className={styles.wrapper}>
         <p className={styles.paragraph}>
           We dive into the next evolution of the web that claims to put the

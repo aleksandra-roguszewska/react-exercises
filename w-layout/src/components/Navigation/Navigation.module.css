@@ -1,12 +1,24 @@
 .navigation {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  height: 10rem;
+  background-color: var(--off_white);
+}
+
+.logo {
+  height: 4rem;
 }
 
 .link_list {
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 3rem;
+  text-decoration: none;
+}
+
+.link {
   text-decoration: none;
 }

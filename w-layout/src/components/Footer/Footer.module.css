@@ -1,5 +1,7 @@
 .footer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: flex-start;
   justify-content: space-between;
+  margin-top: 5rem;
 }
