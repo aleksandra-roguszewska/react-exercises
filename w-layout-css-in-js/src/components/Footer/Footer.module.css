@@ -1,0 +1,15 @@
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+@media (max-width: 800px) {
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 0rem;
+  }
+}
