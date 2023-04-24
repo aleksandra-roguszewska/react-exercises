@@ -1,5 +1,7 @@
 import { useState } from "react";
 import TodoInput from "./components/TodoInput/TodoInput.jsx";
+import TodoItem from "./components/TodoItem/TodoItem1.jsx";
+import TodoList from "./components/TodoList/TodoList1.jsx";
 import "./App.css";
 
 function App() {
@@ -8,16 +10,8 @@ function App() {
   return (
     <div className="App">
       <TodoInput />
-
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
+      <TodoItem todoText="Blabla" />
+      <TodoList />
     </div>
   );
 }
