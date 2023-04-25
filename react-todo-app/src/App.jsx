@@ -1,18 +1,33 @@
-import { useState } from "react";
-import TodoInput from "./components/TodoInput/TodoInput.jsx";
-import TodoItem from "./components/TodoItem/TodoItem1.jsx";
-import TodoList from "./components/TodoList/TodoList1.jsx";
-import "./App.css";
+import "./styles.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <TodoInput />
-      <TodoItem todoText="Blabla" />
-      <TodoList />
-    </div>
+    <>
+      <form className="new-item-form">
+        <div className="form-row">
+          <label htmlFor="item">New item</label>
+          <input type="text" id="item"></input>
+        </div>
+        <button className="btn">Add</button>
+      </form>
+      <h1 className="header">Todo List</h1>
+      <ul className="list">
+        <li>
+          <label>
+            <input type="checkbox"></input>
+            Item1
+          </label>
+          <button className="btn btn-danger">Delete</button>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox"></input>
+            Item2
+          </label>
+          <button className="btn btn-danger">Delete</button>
+        </li>
+      </ul>
+    </>
   );
 }
 
