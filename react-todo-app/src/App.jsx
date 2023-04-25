@@ -1,27 +1,23 @@
 import { useState } from "react";
+import { NewTodoForm } from "./NewTodoForm";
 import "./styles.css";
 
 function App() {
-  const [newItem, setNewItem] = useState("Add new todo here...");
   const [todos, setTodos] = useState([]);
 
+  //When to use states?
   //any type of data that you want to have rerender your component when it changes, you wanna put this inside your state
   //for example when you change your input or when you change todos array
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    setTodos((currentTodos) => [
-      ...currentTodos,
-      { id: crypto.randomUUID(), title: newItem, completed: false },
-    ]);
-
-    setNewItem("");
-  }
-  console.log(todos);
-
   //anytime you want to make sure you are using current value you have to set it as a function using an additional argument that represents this currentValue
   // Otherwise you can pass it as it is shown below in input onChange event(there it doesnt matter what the previous valu was you just want new value)
+
+  function addTodo(title) {
+    setTodos((currentTodos) => [
+      ...currentTodos,
+      { id: crypto.randomUUID(), title, completed: false },
+    ]);
+  }
 
   function toggleTodo(id, completed) {
     setTodos((currentTodos) => {
@@ -54,18 +50,7 @@ function App() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="new-item-form">
-        <div className="form-row">
-          <label htmlFor="item">New item</label>
-          <input
-            value={newItem}
-            onChange={(event) => setNewItem(() => event.target.value)}
-            type="text"
-            id="item"
-          ></input>
-        </div>
-        <button className="btn">Add</button>
-      </form>
+      <NewTodoForm onSubmit={addTodo} />
       <h1 className="header">Todo List</h1>
       <ul className="list">
         {todos.length === 0 && "No todos"}
