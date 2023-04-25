@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NewTodoForm } from "./NewTodoForm";
 import "./styles.css";
 import { TodoList } from "./TodoList";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem("ITEMS");
+    if (localValue == null) return [];
+    return JSON.parse(localValue);
+  });
+
+  useEffect(() => {
+    localStorage.setItem("ITEMS", JSON.stringify(todos));
+  }, [todos]);
+
+  //Useeffect takes function as an argument and runs this function every time
+  //the objects passed in the array in the second argument of useEffect change
 
   //When to use states?
   //any type of data that you want to have rerender your component when it changes, you wanna put this inside your state
