@@ -3,6 +3,11 @@ import { NewTodoForm } from "./NewTodoForm";
 import "./styles.css";
 import { TodoList } from "./TodoList";
 
+//Typowa struktura komponentu:
+//1. Hooki - pwoinny być na początku - you cannot use hooks conditionally
+//2. Helper function, or some code that does some parsing
+//3. Return that contains jsx
+
 function App() {
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
