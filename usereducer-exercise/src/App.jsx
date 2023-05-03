@@ -13,6 +13,7 @@ function App() {
       <form>
         <input type="text" value={name}></input>
         <input type="text" value={name}></input>
+        <input type="text" value={name}></input>
       </form>
     </>
   );
