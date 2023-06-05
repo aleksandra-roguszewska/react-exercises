@@ -1,0 +1,38 @@
+.heading {
+  text-align: center;
+}
+
+.posts_form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 300px;
+}
+
+.posts_form textarea {
+  min-height: 100px;
+  max-width: 100%;
+  resize: none;
+  word-wrap: wrap;
+}
+
+.posts_form textarea,
+.posts_form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+}
+
+.posts_form button {
+  height: 2rem;
+  border: none;
+  box-sizing: content-box;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.posts_form button:hover {
+  background-color: var(--color-champagne-hover);
+  color: var(--color-champagne-pink);
+}
