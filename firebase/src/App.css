@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+
+.actor_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actor_item {
+  border: 1px solid lightgrey;
+  margin: 10px;
+  border-radius: 5px;
+  list-style: none;
+}
+
+.actor_item p {
+  margin: 0;
+}
