@@ -11,6 +11,8 @@ import {
   getDocs,
   query,
   where,
+  serverTimestamp,
+  orderBy,
 } from "firebase/firestore";
 
 function App() {
@@ -31,16 +33,32 @@ function App() {
   const getActors = (querySnapshot) => {
     return querySnapshot.docs.map((doc) => ({
       id: doc.id,
+      createdAt: serverTimestamp(),
       ...doc.data(),
     }));
   };
 
   useEffect(() => {
-    onSnapshot(actorsCollection, (querySnapshot) => {
-      const actors = getActors(querySnapshot);
-      setActors(actors);
-    });
+    onSnapshot(
+      actorsCollection,
+      orderBy("createdAt", "desc"),
+      (querySnapshot) => {
+        const actors = getActors(querySnapshot);
+        setActors(actors);
+      }
+    );
   }, []);
+
+  /**
+   * Naive implementation of searching. NOTE: Querying is case sensitive.
+   */
+  const performQuery = (searchTerm) => {
+    const q = searchTerm
+      ? query(actorsCollection, where("firstName", "==", searchTerm))
+      : query(actorsCollection, orderBy("createdAt", "desc"));
+
+    getDocs(q).then((querySnapshot) => setActors(getActors(querySnapshot)));
+  };
 
   const onFormSubmit = (event) => {
     const actor = {};
@@ -70,23 +88,13 @@ function App() {
     setActorEditedId(null);
   };
 
-  /**
-   * Naive implementation of searching. NOTE: Querying is case sensitive.
-   */
-  const performQuery = (searchTerm) => {
-    const q = searchTerm
-      ? query(actorsCollection, where("firstName", "==", searchTerm))
-      : actorsCollection;
-
-    getDocs(q).then((querySnapshot) => setActors(getActors(querySnapshot)));
-  };
-
   return (
     <>
       <h2>Search actors:</h2>
       <div>
         <label htmlFor="actorSearch">Search by actor's first name: </label>
         <input
+          id="actorSearch"
           type="text"
           placeholder="e.g. John"
           onChange={(e) => performQuery(e.target.value)}
