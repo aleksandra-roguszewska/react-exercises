@@ -1,30 +1,45 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { db } from "./api/firebase";
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  onSnapshot,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
 function App() {
   const [actors, setActors] = useState([]);
+  const [actorToBeDeleted, setActorToVeDeleted] = useState(null);
+  const actorsCollection = collection(db, "papraki");
 
-  const getActors = () => {
-    const actorsCollection = collection(db, "papraki");
+  // Wcześniejsze getActors - przed dodaniem querySnapshot - po querysnapshot nie trzeba robić getDocs, bo to jest ten snapshot
+  // const getActors = () => {
+  //   return getDocs(actorsCollection).then(querySnapshot => {
+  //     return querySnapshot.docs.map(doc => ({
+  //       id: doc.id,
+  //       ...doc.data(),
+  //     }))
+  //   })
+  // }
 
-    getDocs(actorsCollection).then((querySnapshot) => {
-      const actors = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setActors(actors);
-    });
+  const getActors = (querySnapshot) => {
+    return querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
   };
 
   useEffect(() => {
-    getActors();
-    console.log(actors);
+    onSnapshot(actorsCollection, (querySnapshot) => {
+      const actors = getActors(querySnapshot);
+      setActors(actors);
+    });
   }, []);
 
   const onFormSubmit = (event) => {
-    const actorCollection = collection(db, "papraki");
     const actor = {};
     event.preventDefault();
     console.log("Submitted!");
@@ -33,7 +48,12 @@ function App() {
     actor.age = event.target.age.value;
     console.log(actor);
     event.target.reset();
-    addDoc(actorCollection, actor);
+    addDoc(actorsCollection, actor);
+  };
+
+  const deleteHandler = (id) => {
+    const docRef = doc(db, "papraki", id);
+    deleteDoc(docRef);
   };
 
   return (
@@ -46,6 +66,9 @@ function App() {
               <p>Imię: {item.firstName}</p>
               <p>Nazwisko: {item.lastName}</p>
               <p>Wiek: {item.age}</p>
+              <button onClick={() => deleteHandler(item.id)}>
+                Delete actor
+              </button>
             </li>
           );
         })}
