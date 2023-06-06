@@ -8,6 +8,9 @@ import {
   deleteDoc,
   doc,
   updateDoc,
+  getDocs,
+  query,
+  where,
 } from "firebase/firestore";
 
 function App() {
@@ -67,8 +70,29 @@ function App() {
     setActorEditedId(null);
   };
 
+  /**
+   * Naive implementation of searching. NOTE: Querying is case sensitive.
+   */
+  const performQuery = (searchTerm) => {
+    const q = searchTerm
+      ? query(actorsCollection, where("firstName", "==", searchTerm))
+      : actorsCollection;
+
+    getDocs(q).then((querySnapshot) => setActors(getActors(querySnapshot)));
+  };
+
   return (
     <>
+      <h2>Search actors:</h2>
+      <div>
+        <label htmlFor="actorSearch">Search by actor's first name: </label>
+        <input
+          type="text"
+          placeholder="e.g. John"
+          onChange={(e) => performQuery(e.target.value)}
+        />
+      </div>
+
       <h2>Existing actors:</h2>
       <ul>
         {actors.map((item) => {
