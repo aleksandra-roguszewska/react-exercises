@@ -3,16 +3,16 @@ import "./App.css";
 import { db } from "./api/firebase";
 import {
   collection,
-  getDocs,
   addDoc,
   onSnapshot,
   deleteDoc,
   doc,
+  updateDoc,
 } from "firebase/firestore";
 
 function App() {
   const [actors, setActors] = useState([]);
-  const [actorToBeDeleted, setActorToVeDeleted] = useState(null);
+  const [actorEditedId, setActorEditedId] = useState(null);
   const actorsCollection = collection(db, "papraki");
 
   // Wcześniejsze getActors - przed dodaniem querySnapshot - po querysnapshot nie trzeba robić getDocs, bo to jest ten snapshot
@@ -56,6 +56,17 @@ function App() {
     deleteDoc(docRef);
   };
 
+  const updateHandler = (event, id) => {
+    event.preventDefault();
+    console.log("Aktualizuj");
+    const updatedActor = {};
+    updatedActor.firstName = event.target.firstName.value;
+    updatedActor.lastName = event.target.lastName.value;
+    updatedActor.age = event.target.updatedAge.value;
+    updateDoc(doc(db, "papraki", id), updatedActor);
+    setActorEditedId(null);
+  };
+
   return (
     <>
       <h2>Existing actors:</h2>
@@ -67,8 +78,40 @@ function App() {
               <p>Nazwisko: {item.lastName}</p>
               <p>Wiek: {item.age}</p>
               <button onClick={() => deleteHandler(item.id)}>
-                Delete actor
+                Usuń aktora
               </button>
+              <button onClick={() => setActorEditedId(item.id)}>
+                Zaktualizuj dane aktora
+              </button>
+              {actorEditedId && actorEditedId == item.id && (
+                <form
+                  onSubmit={(event) => updateHandler(event, item.id)}
+                  className="actor_form"
+                >
+                  <label htmlFor="firstName">Firstname: </label>
+                  <input
+                    name="firstName"
+                    id="firstName"
+                    type="text"
+                    defaultValue={item.firstName}
+                  ></input>
+                  <label htmlFor="lastName">Lastname: </label>
+                  <input
+                    name="lastName"
+                    id="lastName"
+                    type="text"
+                    defaultValue={item.lastName}
+                  ></input>
+                  <label htmlFor="updatedAge">Age: </label>
+                  <input
+                    name="updatedAge"
+                    id="updatedAge"
+                    type="number"
+                    defaultValue={item.age}
+                  ></input>
+                  <button>Submit changes</button>
+                </form>
+              )}
             </li>
           );
         })}
