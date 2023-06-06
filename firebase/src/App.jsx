@@ -33,21 +33,9 @@ function App() {
   const getActors = (querySnapshot) => {
     return querySnapshot.docs.map((doc) => ({
       id: doc.id,
-      createdAt: serverTimestamp(),
       ...doc.data(),
     }));
   };
-
-  useEffect(() => {
-    onSnapshot(
-      actorsCollection,
-      orderBy("createdAt", "desc"),
-      (querySnapshot) => {
-        const actors = getActors(querySnapshot);
-        setActors(actors);
-      }
-    );
-  }, []);
 
   /**
    * Naive implementation of searching. NOTE: Querying is case sensitive.
@@ -60,13 +48,24 @@ function App() {
     getDocs(q).then((querySnapshot) => setActors(getActors(querySnapshot)));
   };
 
+  useEffect(() => {
+    onSnapshot(
+      query(actorsCollection, orderBy("createdAt", "desc")),
+      (querySnapshot) => {
+        const actors = getActors(querySnapshot);
+        setActors(actors);
+      }
+    );
+  }, []);
+
   const onFormSubmit = (event) => {
     const actor = {};
     event.preventDefault();
     console.log("Submitted!");
     actor.firstName = event.target.firstName.value;
     actor.lastName = event.target.lastName.value;
-    actor.age = event.target.age.value;
+    actor.age = Number(event.target.age.value);
+    actor.createdAt = serverTimestamp();
     console.log(actor);
     event.target.reset();
     addDoc(actorsCollection, actor);
