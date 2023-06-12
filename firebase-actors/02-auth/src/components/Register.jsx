@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../api/firebase";
 
 const firebaseErrors = {
@@ -18,12 +18,15 @@ const Register = () => {
       .then((jwt) => {
         event.target.reset();
         console.log(jwt);
+        signOut(auth);
       })
       .catch((e) => {
         console.dir(e);
         alert(firebaseErrors[e.code]); //dynamiczne odczytywanie pola z obiektu
       });
   };
+
+  //2.09
 
   return (
     <div>
