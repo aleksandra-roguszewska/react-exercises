@@ -24,10 +24,11 @@ export const App = () => {
       <h1>Hello, Firebase Auth!</h1>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/auth/register" element={<Register />} />
-        <Route path="/auth/login" element={<Login />} />
-        <Route path="/auth/forgot-password" element={<ForgotPassword />} />
+        <Route path="auth" element={<Auth />}>
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+          <Route path="forgot-password" element={<ForgotPassword />} />
+        </Route>
         <Route path="/admin" element={<Admin />} />
       </Routes>
     </>
