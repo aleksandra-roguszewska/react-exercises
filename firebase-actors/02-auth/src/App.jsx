@@ -8,6 +8,7 @@ import ForgotPassword from "./components/ForgotPAssword";
 import Homepage from "./components/Homepage";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import UploadFile from "./components/upload/UploadFile";
 
 console.log(auth);
 
@@ -54,6 +55,9 @@ export const App = () => {
           <li>
             <Link to="/admin">Panel administratora</Link>
           </li>
+          <li>
+            <Link to="/upload">Upload file</Link>
+          </li>
           <li
             onClick={() => {
               signOut(auth);
@@ -77,6 +81,7 @@ export const App = () => {
           path="/admin"
           element={!isAuth ? <Navigate to="/" /> : <Admin />}
         />
+        <Route path="/upload" element={<UploadFile />} />
       </Routes>
     </>
   );
