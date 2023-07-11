@@ -8,10 +8,10 @@ I also included 2 vanilla-JS projects and 1 html-css exercise here.
 
 ## Projects
 
-| SR No | Project                                                                                                            | Description                                                                                    |
+| Nr | Project                                                                                                            | Description                                                                                    |
 |-------|--------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
-| 1     | [News homepage](https://github.com/aleksandra-roguszewska/react-exercises/tree/main/w-layout)     | A layout made of react components based on     [Frontend Mentor challenge](https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MF)              |
-| 2     | [Dictionary](https://github.com/aleksandra-roguszewska/react-exercises/tree/main/projekt%20slownik)                                           | An english-english dictionary made with [Free Dictionary API](https://dictionaryapi.dev/) in Typescript          |
+| 1     | [News homepage](https://github.com/aleksandra-roguszewska/react-exercises/tree/main/react-news-homepage)     | A layout made of react components based on     [Frontend Mentor challenge](https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MF)              |
+| 2     | [Dictionary](https://github.com/aleksandra-roguszewska/react-exercises/tree/main/dictionary)                                           | An english-english dictionary made with [Free Dictionary API](https://dictionaryapi.dev/) in Typescript          |
 | 3     | [Class register](https://github.com/aleksandra-roguszewska/react-exercises/tree/main/class-register/uczniowie)    |  Class register app made with React during bootcamp    |
 | 4    | [Landing page](https://github.com/aleksandra-roguszewska/react-exercises/tree/main/landing-page)      |    A landing page for headphones made during bootcamp                                               |
 | 5     | [React todo-app](https://github.com/aleksandra-roguszewska/react-exercises/tree/main/react-todo-app)         |     To-do app based on Web Dev Simplified tutorial                                                                                     |
