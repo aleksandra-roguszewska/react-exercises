@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem;
+}
+
+.product_name {
+  font-weight: 600;
+}
+
+.button_get {
+  color: white;
+  background-color: hsl(220, 22%, 19%);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.button_get:hover {
+  background-color: hsla(220, 22%, 19%, 0.8);
+  cursor: pointer;
+}

@@ -1,0 +1,27 @@
+.app_container {
+  margin-left: 5%;
+  margin-right: 5%;
+  border-left: 1px hsl(0, 0%, 85%) solid;
+  border-right: 1px hsl(0, 0%, 85%) solid;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  padding-top: 36px;
+}
+
+.navigation {
+  background-color: white;
+  border-top: 1px hsl(0, 0%, 85%) solid;
+  border-bottom: 1px hsl(0, 0%, 85%) solid;
+  position: sticky;
+  z-index: 2;
+  top: -1px;
+}
+
+.product_presentation {
+  background-color: hsl(0, 0%, 95%);
+}
+
+.order_section {
+  background-color: hsl(0, 0%, 95%);
+  border-bottom: 1px hsl(0, 0%, 85%) solid;
+}

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form_fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+.button_add {
+  margin: 1rem 0;
+  cursor: pointer;
+}

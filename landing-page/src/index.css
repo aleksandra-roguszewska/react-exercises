@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", "Times New Roman", sans-serif;
+  font-size: 14px;
+  color: hsl(220, 22%, 19%);
+}

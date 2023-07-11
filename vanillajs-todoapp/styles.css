@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+/* Kolory */
+
+body {
+  --clr-primary: hsl(202, 100%, 28%);
+  --clr-secondary: hsl(202, 100%, 19%);
+  --clr-btn-disabled: hsl(69, 14%, 75%);
+  --clr-accent: hsl(0, 0%, 98%);
+  --background: hsl(202, 100%, 28%);
+  --background-app: hsl(69, 14%, 90%);
+  --background-todo-entry: hsl(0, 0%, 98%);
+  --hover-opacity: 0.6;
+}
+
+.dark-mode {
+  --clr-primary: hsl(202, 100%, 28%);
+  --clr-secondary: hsl(0, 0%, 84%);
+  --clr-btn-disabled: hsl(69, 14%, 25%);
+  --clr-accent: hsl(0, 0%, 84%);
+  --background: hsl(0, 0%, 16%);
+  --background-app: hsl(0, 0%, 10%);
+  --background-todo-entry: hsl(0, 0%, 14%);
+}
+
+/* Html i body*/
+
+html {
+  font-size: 16px;
+}
+
+body {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background);
+}
+
+/* Header*/
+
+header {
+  padding: 0 2rem 0.7rem 2rem;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+h1 {
+  color: var(--clr-accent);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.25rem;
+}
+
+.btn-dark-mode {
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: transparent;
+  color: var(--clr-accent);
+}
+
+.btn-dark-mode:hover {
+  text-decoration: none;
+  opacity: var(--hover-opacity);
+  cursor: pointer;
+}
+
+/* Main*/
+
+main {
+  width: 85%;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: var(--background-app);
+}
+
+/* Pole do dodawania nowych todo*/
+
+.new-todo-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  color: var(--clr-secondary);
+  background-color: var(--background-todo-entry);
+  box-shadow: inset 0px 0px 0px 2px var(--clr-primary);
+}
+
+.todo-text-input {
+  flex-grow: 1;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--clr-secondary);
+  background-color: transparent;
+}
+
+.todo-text-input::placeholder {
+  color: var(--clr-secondary);
+  opacity: 0.7;
+  font-weight: bold;
+}
+
+input:focus,
+input:hover {
+  outline: none;
+  background-color: hsla(202, 100%, 28%, 15%);
+}
+
+.btn-plus {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-primary);
+  color: var(--clr-accent);
+}
+
+.btn-plus:hover {
+  opacity: var(--hover-opacity);
+  cursor: pointer;
+}
+
+.btn-plus:disabled {
+  background-color: var(--clr-btn-disabled);
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+/* Lista z dodanymi todo*/
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 1rem 0;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--clr-secondary);
+}
+
+.btn-reset {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--clr-secondary);
+}
+
+.btn-reset:hover {
+  text-decoration: none;
+  opacity: var(--hover-opacity);
+  cursor: pointer;
+}
+
+/* Pojedyncze todo*/
+
+.todo-entry {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px 0px hsla(202, 100%, 19%, 0.25);
+  background-color: var(--background-todo-entry);
+}
+
+.todo-entry-text-input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--clr-secondary);
+}
+
+.btn-minus {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  border: none;
+  box-shadow: inset 0px 0px 0px 3px var(--clr-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--clr-primary);
+}
+
+.btn-minus:hover {
+  opacity: var(--hover-opacity);
+  cursor: pointer;
+}
+
+/* Ikony*/
+
+.btn-icon-minus {
+  width: 1rem;
+  height: 1rem;
+  filter: invert(21%) sepia(72%) saturate(1890%) hue-rotate(179deg)
+    brightness(100%) contrast(101%);
+}
+
+.btn-icon-plus {
+  width: 1rem;
+  height: 1rem;
+  filter: invert(90%) sepia(100%) saturate(0%) hue-rotate(238deg)
+    brightness(104%) contrast(95%);
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 12px;
+  }
+
+  body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  header {
+    padding: 0 1rem 0.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}

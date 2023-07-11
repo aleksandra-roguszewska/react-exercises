@@ -1,0 +1,54 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.description {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product_name {
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.button_get {
+  color: white;
+  background-color: hsl(220, 22%, 19%);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.button_get:hover {
+  background-color: hsla(220, 22%, 19%, 0.8);
+  cursor: pointer;
+}
+
+.button_read {
+  background-color: transparent;
+  border: unset;
+}
+
+.button_read:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.image {
+  height: 80vh;
+  margin: 4vh;
+}

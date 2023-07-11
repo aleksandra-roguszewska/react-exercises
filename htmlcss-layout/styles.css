@@ -1,0 +1,274 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Epilogue', sans-serif;
+  color:hsl(0, 0%, 8%);
+}
+
+:root{
+  font-size: 18px;
+}
+
+body{
+  display: grid;
+  grid-template-areas: 
+  "nav nav nav nav nav"
+  ". . . . ."
+  ". article . hero .";
+
+  grid-template-columns: 1fr 5fr 1fr 4fr 1fr;
+  grid-template-rows: 80px 40px 1fr;
+  margin-bottom: 50px;
+  background-color: hsl(0, 0%, 98%);
+}
+
+/* NAV styles */
+
+nav{
+  grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 0.75rem;
+}
+
+.nav-left{
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+  padding: 0.5rem 1.5rem 0 1rem;
+  height: 2rem;
+}
+
+ul{
+  display: flex;
+  align-items:center;
+  list-style: none;
+}
+
+li{
+  padding-left: 2rem;
+  color: hsl(0, 0%, 41%);
+}
+
+.arrow-button{
+  padding: 0 0 0.1rem 0.5rem;
+}
+
+.nav-right{
+  margin-right: 30px;
+  display:flex;
+  align-items: center;
+} 
+
+.hamburger-menu{
+  display:none;
+}
+
+.login-button{
+  color: hsl(0, 0%, 41%);
+}
+
+.register-button{
+  padding: 0.5rem 1rem;
+  border: 1px solid hsl(0, 0%, 41%);
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+  color: hsl(0, 0%, 41%);
+}
+
+li:hover, .arrow-button:hover, .login-button:hover, .register-button:hover{
+  color: hsl(0, 0%, 8%);
+  cursor: pointer;
+}
+
+.register-button:hover{
+  border-color:hsl(0, 0%, 8%);
+}
+
+
+/* ARTICLE styles */
+
+
+article{
+  grid-area: article;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container{
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+h1{
+  font-size: 5rem;
+  font-weight: 700;
+  padding-bottom: 2.5rem;
+}
+
+p{
+  padding-bottom: 2.5rem;
+  width: 70%;
+  line-height: 130%;
+  color: hsl(0, 0%, 41%)
+}
+
+.learn-button{
+  padding: 1rem;
+  background-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 98%);
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 50px; 
+}
+
+.learn-button:hover{
+  padding: 1rem;
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 8%);
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 50px; 
+  border: 1px solid hsl(0, 0%, 8%);
+  cursor: pointer;
+}
+
+.client-icons{
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  align-items: center;
+}
+
+.single-client-icon{
+  padding-right: 20px;
+}
+
+/* HERO-IMAGE styles */
+
+img[src*="image-hero-desktop.png"]{
+  grid-area: hero;
+  width: 33vw;
+}
+
+img[src*="image-hero-mobile.png"]{
+  grid-area: hero;
+  display: none;
+}
+
+/* MEDIA */
+
+
+@media (max-width: 1415px){
+    h1{
+      font-size: 4.2rem;
+    }
+}
+
+@media (max-width: 1280px){
+  :root{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1140px){
+  :root{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px){
+  .container{
+    margin-top: 15%;
+  }
+
+  h1{
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px){
+  :root{
+    font-size: 18px;
+  }
+
+  ul, .login-button, .register-button{
+    display: none;
+  }
+
+  .hamburger-menu{
+    display: unset;
+  }
+
+  body{
+    grid-template-areas: 
+    "nav"
+    "hero"
+    "article";
+    grid-template-columns: 100%;
+    grid-template-rows: 80px auto auto;
+  }
+
+  img[src*="image-hero-desktop.png"]{
+    display: none;
+  }
+
+  img[src*="image-hero-mobile.png"]{
+    grid-area: hero;
+    display: unset;
+    width: 100%;
+  }
+
+  .container{
+    margin-top: 2rem;
+    margin: 0 1rem 0 1rem;
+    align-items: center;
+  }
+
+  .main-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  h1{
+    padding: 1rem 0 1rem 0;
+    text-align:center;
+    font-size: 2.5rem;
+  }
+  
+  br{
+    display: none;
+  }
+
+  p{
+    text-align:center;
+    width: unset;
+    padding: 1rem 0 2rem 0;
+  }
+
+  .client-icons{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content:space-between;
+    flex-shrink: 1;
+  }
+
+  .single-client-icon{
+    width: 20%;
+    padding-right: 0;
+  }
+
+}
+

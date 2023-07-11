@@ -1,0 +1,47 @@
+.skill_container {
+  padding: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.Reaction {
+  background-color: var(--light-red-transparent);
+  color: var(--light-red);
+}
+
+.Memory {
+  background-color: var(--orangey-yellow-transparent);
+  color: var(--orangey-yellow);
+}
+
+.Verbal {
+  background-color: var(--green-teal-transparent);
+  color: var(--green-teal);
+}
+
+.Visual {
+  background-color: var(--cobalt-blue-transparent);
+  color: var(--cobalt-blue);
+}
+
+.skill_name {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+.skill_numbers {
+  color: var(--dark-grey-blue);
+}
+
+.skill_numbers_score {
+  font-weight: 900;
+}
