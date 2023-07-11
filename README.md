@@ -2,7 +2,7 @@
 
 ### Description
 
-Hi! These are small react projects that I completed while learning React. I made them based on various tutorials, courses and as a part of infoshareAcademy frontend bootcamp (https://infoshareacademy.com/kurs/bootcamp-frontend/). There are also a few projects from Frontend Mentor (https://www.frontendmentor.io/).
+Hi! These are small react projects that I completed while learning React. I made them based on various tutorials, courses and as a part of [infoshareAcademy frontend bootcamp](https://infoshareacademy.com/kurs/bootcamp-frontend/), that I took part in this year. There are also a few projects from [Frontend Mentor](https://www.frontendmentor.io/).
 
 ## Projects
 
